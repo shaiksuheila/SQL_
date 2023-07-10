@@ -1,0 +1,12 @@
+
+>>CREATE DATABASE databasename;
+
+>>DROP DATABASE databasename;
+
+>>1.BACKUP DATABASE databasename
+TO DISK = 'filepath';
+2.A differential back up only backs up the parts of the database that
+have changed since the last full database backup.
+BACKUP DATABASE databasename
+TO DISK = 'filepath'
+WITH DIFFERENTIAL;
