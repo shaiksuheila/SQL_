@@ -1,0 +1,150 @@
+SQL COMMANDS:
+SELECT - extracts data from a database
+UPDATE - updates data in a database
+DELETE - deletes data from a database
+INSERT INTO - inserts new data into a database
+CREATE DATABASE - creates a new database
+ALTER DATABASE - modifies a database
+CREATE TABLE - creates a new table
+ALTER TABLE - modifies a table
+DROP TABLE - deletes a table
+CREATE INDEX - creates an index (search key)
+DROP INDEX - deletes an index
+...................................................................................
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  SELECT  >>>>>>>>>>>>>>>>>>>>>>>
+The SELECT statement is used to select data from a database.
+SYNTAX: SELECT column1,column2,....
+        From table_name;
+            (or)
+        SELECT * FROM table_name
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> SELECT DISTINCT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+The SELECT DISTINCT statement is used to return only distinct (different) values.
+SYNTAX: SELECT DISTINCT column1,column2,...
+        From table_name;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> WHERE  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+The WHERE clause is used to filter records.
+It is used to extract only those records that fulfill a specified condition.
+SYNTAX: SELECT c1,c2,......
+        FROM table_name
+        WHERE condition;
+EXAMPLE:  SELECT * FROM Customers
+          WHERE Country='TEXT';
+          SELECT * FROM Customers
+          WHERE CustomerID=1;(NUMERIC)
+''''''''''''''''operators''''''''''''''''''
+>>equal
+
+>>greater than
+
+>>less than
+
+>>greater than r equal
+
+>>less than r equal
+
+>>between:
+SELECT * FROM table_name
+WHERE column BETWEEN v1 AND v2;
+
+>>like:
+SELECT * FROM table_name
+WHERE Column LIKE 's%';(starting letter)
+
+>>in:
+SELECT * FROM table_name
+WHERE Column IN ('v1','v2');
+
+>>AND : if all the conditions separated by AND are TRUE
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 AND condition2 AND condition3 ...;
+
+>>OR:if any of the conditions separated by OR is TRUE.
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 OR condition2 OR condition3 ...;
+
+>>NOT:The NOT operator displays a record if the condition(s) is NOT TRUE
+SELECT column1, column2, ...
+FROM table_name
+WHERE NOT condition;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ORDER BY   >>>>>>>>>>>>>>>>>>>>>>>>>>>>
+The ORDER BY keyword is used to sort the result-set in ascending or descending order.
+SYNTAX:
+SELECT column1, column2, ...
+FROM table_name
+ORDER BY column1, column2, ... ASC|DESC;
+
+EXAMPLE:
+SELECT * FROM table_name
+ORDER BY column1 ASC, column2 DESC;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> INSERT INTO>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+The INSERT INTO statement is used to insert new records in a table
+INSERT INTO SYNTAX:
+1.Specify both the column names and the values to be inserted:
+SYNTAX:
+      INSERT INTO table_name (column1, column2, column3, ...)
+      VALUES (value1, value2, value3, ...);
+
+2.If you are adding values for all the columns of the table, you do not need to specify the column names in the SQL query.
+SYNTAX:
+      INSERT INTO table_name
+      VALUES (value1, value2, value3, ...);
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>NULL AND NOTNULL  >>>>>>>>>>>>>>>>>>>>>>
+A field with a NULL value is a field with no value.
+IS NULL SYNTAX:(used for any empty value)
+          SELECT column_names
+          FROM table_name
+          WHERE column_name IS NULL;
+IS NOT NULL SYNTAX:(used for not null values)
+          SELECT column_names
+          FROM table_name
+          WHERE column_name IS NOT NULL;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>   UPDATE   >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+The UPDATE statement is used to modify the existing records in a table.
+SYNTAX:
+        UPDATE table_name
+        SET column1 = value1, column2 = value2, ...
+        WHERE condition;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> DELETE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+The DELETE statement is used to delete existing records in a table.
+SYNTAX:
+        DELETE FROM table_name WHERE condition;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>> MIN AND MAX >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+The MIN() function returns the smallest value of the selected column.
+The MAX() function returns the largest value of the selected column.
+SYNTAX:
+MIN-    SELECT MIN(column_name)
+        FROM table_name
+        WHERE condition;
+MAX-    SELECT MAX(column_name)
+        FROM table_name
+        WHERE condition;
+
+>>>>>>>>>>>>>>>>>>>>>>>>> COUNT>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+The COUNT() function returns the number of rows that matches a specified criterion
+SYNTAX:
+      SELECT COUNT(column_name)
+      FROM table_name
+      WHERE condition;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>AVG>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+The AVG() function returns the average value of a numeric column. 
+SYNTAX:
+      SELECT AVG(column_name)
+      FROM table_name
+      WHERE condition;
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>SUM>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>...
+SYNTAX:
+      SELECT SUM(column_name)
+      FROM table_name
+      WHERE condition;
