@@ -1,4 +1,4 @@
->>>>CREATING NEW TABLE:
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>CREATING NEW TABLE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 CREATE TABLE table_name (                         
     column1 datatype,                            
     column2 datatype,                             
@@ -14,7 +14,7 @@ example:CREATE table coding(
 
 
 
->>>>CREATING TABLE USING ANOTHER TABLE:
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>CREATING TABLE USING ANOTHER TABLE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 CREATE TABLE new_table_name AS        
     SELECT column1, column2,...
     FROM existing_table_name
@@ -25,34 +25,34 @@ example:create table new AS
   from coding;
 
 
->>DROP TABLE-used to drop an existing table in a database
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>DROP TABLE-used to drop an existing table in a database>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 DROP TABLE table_name;  
 example:
  Drop table new
 
->>>>TRUNCATE TABLE-used to delete the data inside a table, but not the table itself.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>TRUNCATE TABLE-used to delete the data inside a table, but not the table itself>>>>>>>>>>>>>>>>>>>>>>>>>>
 TRUNCATE TABLE table_name; #truncate table coding
 
 
->>>>ALTER TABLE
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>ALTER TABLE>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 1.is used to add, delete, or modify columns in an existing table.
 2.is also used to add and drop various constraints on an existing table.
 
-1.ALTER TABLE-ADD COLUMN
+                            1.ALTER TABLE-ADD COLUMN
 ALTER TABLE table_name
 ADD column_name datatype;
 example:
 ALTER table coding 
 add c varchar(255);
 
-2.ALTER TABLE-DROP COLUMN
+                            2.ALTER TABLE-DROP COLUMN
 ALTER TABLE table_name
 DROP COLUMN column_name;
 example:
 alter table coding 
 drop column c;
 
-3.ALTER TABLE-RENAME COLUMN
+                            3.ALTER TABLE-RENAME COLUMN
 ALTER TABLE table_name
 RENAME COLUMN old_name to new_name;
 example:
