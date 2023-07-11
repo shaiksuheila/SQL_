@@ -1,1 +1,62 @@
+>>>>>>>>>>>>>>>>>>>>>>>>>> TOP  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+The SELECT TOP clause is used to specify the number of records to return.
+SYNTAX:
+        SELECT TOP NUMBER 
+        FROM TABLE_NAME
+SQL statement selects the first SOME% of the records from the TABLE_NAME
+SYNTAX:
+        SELECT TOP number|percent column_name(s)
+        FROM table_name
+        WHERE condition;
+
+>>>>>>>>>>>>>>>>>>>>>>>>> LIKE >>>>>>>>>>>>>>>>>>>>>>>>>>>
+The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+SYNTAX:
+        SELECT column1, column2, ...
+        FROM table_name
+        WHERE columnN LIKE pattern;
+CASE-1:The percent sign (%) represents zero, one, or multiple characters
+CASE-2:The underscore sign (_) represents one, single character
+
+.....WHERE table_name LIKE 'a%'- find value start with a
+.....WHERE table_name LIKE '%a'- find value ends with a
+.....WHERE table_name LIKE '%OR %'-find values that have "or" in any position
+.....WHERE table_name LIKE '_r%'-find value that have r in second position
+.....WHERE table_name LIKE 'a%o'-find value that start with a and ends with o
+example:
+        SELECT * FROM Customers
+        WHERE CustomerName LIKE 'a%';
+>>>>>>>>>>>>>>>>>>>>>>>>>> WILDCARDS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+1.[CHARLIST]-     SELECT * FROM Customers
+                  WHERE City LIKE '[bsp]%';
+                  SELECT * FROM Customers
+                  WHERE City LIKE '[a-c]%';
+2.[!CHARLIST]-    SELECT * FROM Customers
+                  WHERE City LIKE '[!bsp]%';
+                          OR
+                  SELECT * FROM Customers
+                  WHERE City NOT LIKE '[bsp]%';
+3.presence of GROUP OF starting LETTERS -SELECT * FROM Customers
+                                        WHERE City RLIKE '^[AEIOU]';
+4.presence of GROUP OF ending LETTERS -SELECT * FROM Customers
+                                    WHERE City RLIKE '[AEIOU]$';
+5.presence of OF middle LETTERS -   SELECT * FROM Customers
+                                    WHERE City RLIKE '^[aeiou].*[aeiou]$';
+
+
+6.NOT starting with letters   -      select distinct(city) from station
+                                    WHERE CITY NOT RLIKE '^[aeiou]'
+                                              or
+                                    WHERE CITY NOT RLIKE '^[aeiou].*$'
+7.NOT ending with this letters-    select distinct(city) from station
+                                    where city not rlike '[aeiou]$';
+8.EITHER DONT START WITH AND END WITH -  SELECT DISTINCT CITY FROM STATION
+                                    WHERE CITY NOT RLIKE '(^[aeiou]).*([aeiou]$)';
+
+9.DONOT START WITH AND END WITH  -   SELECT DISTINCT CITY FROM STATION
+WHERE CITY NOT RLIKE '^[aeiou]' and city not rlike '[aeiou]$'
+>>>>>>>>>>>>>>>>>>>>>>>>  IN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
 
