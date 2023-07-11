@@ -8,7 +8,7 @@ SYNTAX:
         SELECT TOP number|percent column_name(s)
         FROM table_name
         WHERE condition;
-
+>>>>>>>>>>>>>>>>>>>>>>>> LIMIT  >>>>>>>>>>>>>>>>>>>>>>>>>>>
 >>>>>>>>>>>>>>>>>>>>>>>>> LIKE >>>>>>>>>>>>>>>>>>>>>>>>>>>
 The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
 SYNTAX:
@@ -55,8 +55,13 @@ example:
 
 9.DONOT START WITH AND END WITH  -   SELECT DISTINCT CITY FROM STATION
 WHERE CITY NOT RLIKE '^[aeiou]' and city not rlike '[aeiou]$'
->>>>>>>>>>>>>>>>>>>>>>>>  IN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+>>>>>>>>>>>>>>>>>>>>>>>>  IN  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+The IN operator allows you to specify multiple values in a WHERE clause.
+SYNTAX:NOT IN:        SELECT * FROM Customers
+                        WHERE Country NOT IN ('Germany', 'France', 'UK');
+SYNTAX: IN:             SELECT * FROM Customers
+                        WHERE Country IN ('Germany', 'France', 'UK');
 
 
 
